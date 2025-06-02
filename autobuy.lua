@@ -726,7 +726,31 @@ end
 
 -- Event listener for DataStreamEvent
 local function setupDataStreamListener()
+
+    -- Example restock response:
+
+    --[[
+        {
+        "type": "UpdateData",
+        "source": "DataStreamEvent",
+        "table": [
+            ["ROOT/SeedStock/Stocks", {
+            "Carrot": {"MaxStock": 20, "Stock": 20},
+            "Strawberry": {"MaxStock": 5, "Stock": 5},
+            "Apple": {"MaxStock": 1, "Stock": 1},
+            "Tomato": {"MaxStock": 1, "Stock": 1},
+            "Blueberry": {"MaxStock": 5, "Stock": 5}
+            }],
+            ["ROOT/SeedStock/Seed", 5829582]
+        ],
+        "timestamp": 1748874601,
+        "object": "yourusername_DataServiceProfile"
+        }
+    ]]
+
     DataStreamEvent.OnClientEvent:Connect(function(eventType, object, tbl)
+
+        
         if eventType == "UpdateData" then
             for _, pair in ipairs(tbl) do
                 local path = pair[1]
@@ -822,11 +846,11 @@ local function main()
         updateLog("❌ GUI closed (use floating 🌱 button to reopen)")
     end)
     
-    updateLog("🌱 GAG Autobuy Seeds initialized (Event-Based)")
+    updateLog("🌱 GAG Autobuy Seeds initialized")
     updateLog("Click START to enable auto-purchasing")
     updateLog("Listening for stock updates...")
 
-    print("🌱 GAG Autobuy Seeds (Event-Based) loaded successfully!")
+    print("🌱 GAG Autobuy Seeds loaded successfully!")
 end
 
 local success, err = pcall(main)
