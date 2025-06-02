@@ -5,7 +5,7 @@
     Script Name:      GAG Autobuy Seeds
     Author:           SuppliedOrange
     Version:          1.0.0
-    GitHub:           github.com/yourrepo (optional)
+    GitHub:           https://github.com/SuppliedOrange/my-roblox-scripts/
     Date:             2025-06-02
     Description:      Automatically buys seeds in Grow a Garden.
 
