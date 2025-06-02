@@ -22,7 +22,6 @@ local DataStreamEvent = game:GetService("ReplicatedStorage").GameEvents.DataStre
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
-local backpack = player.Backpack
 
 -- Configuration with default values
 local config = {
@@ -116,7 +115,7 @@ end
 
 local BuyRemote = game.ReplicatedStorage.GameEvents.BuySeedStock
 
--- Utility Functions ( Not used anymore lol )
+-- Utility Functions ( i used this to scan backpack items to verify if seed has been added, no longer needed )
 local function parseToolName(toolName)
     local seedName, quantity = string.match(toolName, "^(.+) Seed %[X(%d+)%]")
     if seedName and quantity then
