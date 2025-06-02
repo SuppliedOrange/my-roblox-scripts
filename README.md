@@ -1,5 +1,5 @@
 # my-roblox-scripts
-Roblox scripts for education purposes
+Roblox scripts for educational purposes.
 
 Hi, this is a collection of scripts that I have developed for the sake of education. Please do NOT use these scripts for unethical purposes.
 You may pick, dissect and learn from them.
